@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Domain\\Domain.csproj": {}
+    "C:\\Fiap\\Fiap.SmartCity\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Domain\\Domain.csproj": {
+    "C:\\Fiap\\Fiap.SmartCity\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Fiap\\Fiap.SmartCity\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Fiap\\Fiap.SmartCity\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\mfont\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Domain\\obj\\",
+        "outputPath": "C:\\Fiap\\Fiap.SmartCity\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mfont\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

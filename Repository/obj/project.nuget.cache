@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Aspj7wIhl95ZyhZBoTooxd08jCPjd3c1Xz7oNGL+P9540vKJbt2HbwWMwLWd5bbm3DprGBDVCMCBoQ2RbTt/yg==",
+  "dgSpecHash": "X9zTBf2fele5hux+y5fkwNQBqLNWVpQrPeXRaqhzfuZU/ea+NImYaiyUlFircpnL6N+eykkmcSIIXojSjfpuVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Repository\\Repository.csproj",
+  "projectFilePath": "C:\\Fiap\\Fiap.SmartCity\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mfont\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\mfont\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",

@@ -545,11 +545,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Fiap\\Fiap.SmartCity\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Repository\\Repository.csproj",
+      "projectPath": "C:\\Fiap\\Fiap.SmartCity\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\mfont\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Repository\\obj\\",
+      "outputPath": "C:\\Fiap\\Fiap.SmartCity\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mfont\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -566,8 +566,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\Domain\\Domain.csproj"
+            "C:\\Fiap\\Fiap.SmartCity\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Fiap\\Fiap.SmartCity\\Domain\\Domain.csproj"
             }
           }
         }
@@ -602,7 +602,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

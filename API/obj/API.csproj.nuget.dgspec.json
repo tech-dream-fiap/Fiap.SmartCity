@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\API\\API.csproj": {}
+    "C:\\Fiap\\Fiap.SmartCity\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\API\\API.csproj": {
+    "C:\\Fiap\\Fiap.SmartCity\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\API\\API.csproj",
+        "projectUniqueName": "C:\\Fiap\\Fiap.SmartCity\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\API\\API.csproj",
+        "projectPath": "C:\\Fiap\\Fiap.SmartCity\\API\\API.csproj",
         "packagesPath": "C:\\Users\\mfont\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mfont\\source\\repos\\Fiap.SmartCity\\API\\obj\\",
+        "outputPath": "C:\\Fiap\\Fiap.SmartCity\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mfont\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.11.1, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -63,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
