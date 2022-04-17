@@ -1,5 +1,4 @@
-﻿using Domain.Aggregates;
-using Domain.Commands;
+﻿using Domain.Commands;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repository;

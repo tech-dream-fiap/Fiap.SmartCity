@@ -2,6 +2,7 @@
 using Domain.Commands;
 using Domain.ValueObjects;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Repository;
 
 namespace API.Controllers
@@ -15,6 +16,15 @@ namespace API.Controllers
         public DeviceController(RepositoryContext context)
         {
             _context = context;
+        }
+
+        [HttpGet]
+        [Route("")]
+        public async Task<IActionResult> GetDevices()
+        {
+            var devices = await _context.Device.Include(x => x.Region).ToListAsync();
+
+            return Ok(devices);
         }
 
         [HttpPost]
@@ -43,16 +53,16 @@ namespace API.Controllers
         [Route("execute/maintenance")]
         public async Task<IActionResult> ExecuteMaintenance([FromBody] ExecuteDeviceMaintenanceCommand command)
         {
-            var region = await _context.Region.FindAsync(command.RegionId);
-            if (region == null)
-            {
-                return BadRequest("Region not found");
-            }
-
-            var device = await _context.Device.FindAsync(command.DeviceId);
+            var device = _context.Device.Include(x => x.Region).Where(x => x.Id == command.DeviceId).FirstOrDefault();
             if (device == null)
             {
                 return BadRequest("Device not found");
+            }
+
+            var region = await _context.Region.FindAsync(device.Region?.Id);
+            if (region == null)
+            {
+                return BadRequest("Region not found");
             }
 
             if (device.Status == DeviceStatus.Inactive)
