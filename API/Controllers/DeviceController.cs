@@ -4,6 +4,7 @@ using Domain.ValueObjects;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repository;
+using System;
 
 namespace API.Controllers
 {
@@ -40,7 +41,7 @@ namespace API.Controllers
             _context.Device.Add(new Device()
             {
                 Region = region,
-                InstallationDate = DateTimeOffset.Now,
+                InstallationDate = DateTimeOffset.UtcNow,
                 Status = command.Status,
             });
 
@@ -75,7 +76,7 @@ namespace API.Controllers
                 device.Region = await _context.Region.FindAsync(command.RegionId);
             }
 
-            device.LastMaintenanceDate = DateTime.Now;
+            device.LastMaintenanceDate = DateTimeOffset.UtcNow;
 
             _context.Device.Update(device);
 
