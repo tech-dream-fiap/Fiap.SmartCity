@@ -59,7 +59,7 @@ namespace API.Controllers
                 return BadRequest("Device not found");
             }
 
-            var region = await _context.Region.FindAsync(device.Region?.Id);
+            var region = await _context.Region.FindAsync(command.RegionId);
             if (region == null)
             {
                 return BadRequest("Region not found");
@@ -70,7 +70,7 @@ namespace API.Controllers
                 return BadRequest("This device is inactive");
             }
 
-            if (region.Id != command.RegionId)
+            if (device.Region?.Id != command.RegionId)
             {
                 device.Region = await _context.Region.FindAsync(command.RegionId);
             }
@@ -78,6 +78,7 @@ namespace API.Controllers
             device.LastMaintenanceDate = DateTime.Now;
 
             _context.Device.Update(device);
+
             await _context.SaveChangesAsync();
 
             return Ok(device);
