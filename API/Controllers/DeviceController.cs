@@ -12,18 +12,20 @@ namespace API.Controllers
     [Route("[controller]")]
     public class DeviceController : ControllerBase
     {
-        public readonly RepositoryContext _context;
+        public readonly DeviceRepository _deviceRepository;
+        public readonly RegionRepository _regionRepository;
 
         public DeviceController(RepositoryContext context)
         {
-            _context = context;
+            _deviceRepository = new DeviceRepository(context);
+            _regionRepository = new RegionRepository(context);
         }
 
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetDevices()
         {
-            var devices = await _context.Device.Include(x => x.Region).ToListAsync();
+            var devices = await _deviceRepository.GetAll();
 
             return Ok(devices);
         }
@@ -32,35 +34,35 @@ namespace API.Controllers
         [Route("execute/installation")]
         public async Task<IActionResult> ExecuteInstallation([FromBody] ExecuteDeviceInstallationCommand command)
         {
-            var region = await _context.Region.FindAsync(command.RegionId);
+            var region = await _regionRepository.GetById(command.RegionId);
             if (region == null)
             {
                 return BadRequest("Region not found");
             }
 
-            _context.Device.Add(new Device()
+            var device = new Device()
             {
                 Region = region,
-                InstallationDate = DateTimeOffset.UtcNow,
                 Status = command.Status,
-            });
+                InstallationDate = DateTimeOffset.UtcNow,
+            };
 
-            await _context.SaveChangesAsync();
+            await _deviceRepository.Create(device);
 
             return Ok();
         }
 
         [HttpPut]
         [Route("execute/maintenance")]
-        public async Task<IActionResult> ExecuteMaintenance([FromBody] ExecuteDeviceMaintenanceCommand command)
+        public async Task<IActionResult> ExecuteMaintenance([FromBody] DeviceMaintenanceCommand command)
         {
-            var device = _context.Device.Include(x => x.Region).Where(x => x.Id == command.DeviceId).FirstOrDefault();
+            var device = await _deviceRepository.GetById(command.DeviceId);
             if (device == null)
             {
                 return BadRequest("Device not found");
             }
 
-            var region = await _context.Region.FindAsync(command.RegionId);
+            var region = await _regionRepository.GetById(command.RegionId);
             if (region == null)
             {
                 return BadRequest("Region not found");
@@ -73,14 +75,12 @@ namespace API.Controllers
 
             if (device.Region?.Id != command.RegionId)
             {
-                device.Region = await _context.Region.FindAsync(command.RegionId);
+                device.Region = await _regionRepository.GetById(command.RegionId);
             }
 
             device.LastMaintenanceDate = DateTimeOffset.UtcNow;
 
-            _context.Device.Update(device);
-
-            await _context.SaveChangesAsync();
+            await _deviceRepository.Update(device);
 
             return Ok(device);
         }
